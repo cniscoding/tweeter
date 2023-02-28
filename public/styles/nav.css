@@ -1,17 +1,37 @@
 nav { 
-  color: #FFFFFF;
-  background-color: #4056A1;
   height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  color: #FFFFFF;
   display:flex;
+  padding: 1.5em;
+
   flex-direction: row;
   justify-content: space-between;
-  padding: 1.5em;
-  width: 100vw;
+  align-items:center;
+  
   position: fixed;
 }
 
 span {
-  font-size: 24px;
   font-family: 'Bungee', cursive;
+  font-size: 24px;
 }
 
+.divWriteTweet {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.divWriteTweet i {
+  margin-top:-1.2rem;
+  color:red;
+  cursor: pointer;
+}
+
+.divWriteTweet p {
+  cursor: pointer;
+}

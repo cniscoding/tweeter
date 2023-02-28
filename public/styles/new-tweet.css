@@ -1,0 +1,38 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  color:white;
+  background-color: #4056A1;
+  font-family: 'Bungee', cursive;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter{
+  font-family: 'Bungee', cursive;
+}
+
+section{
+  width: 90%
+}
+
+#tweet-text {
+  background-color: transparent;
+  outline: none;
+  outline-style: none;
+  border:none;
+  border-bottom: 2px solid black; 
+}
+
+.divTweetCounter {
+  display: flex;
+  justify-content: space-between;
+  margin-top:0.5rem;
+}
