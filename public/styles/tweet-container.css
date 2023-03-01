@@ -1,0 +1,33 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 10px solid black;
+}
+
+article.tweet-container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article {
+  border: 10px black solid;
+  padding: 1rem;
+}
+
+article:hover {
+  box-shadow: 10px 5px 5px #545149
+}
+
+section{
+  padding: 1rem
+}
+
+footer div p {
+  margin: 0px;
+}
+
+i:hover{
+  color:red;
+}
+
