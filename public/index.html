@@ -33,7 +33,6 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <!--  need to fix this area. tweeter look smaller font and the write a new tweet text and arrow are not the same-->
     <nav>
       <span>tweeter</span> 
       <div class="divWriteTweet">
@@ -44,7 +43,7 @@
 
     <header class="profile">
       <div>
-        <img src="/images/profile-hex.png">
+        <img id="profilePic" src="/images/profile-hex.png">
       </div>
       <br>
       <div>
@@ -65,28 +64,7 @@
           </div>
         </form>
       </section>
-      <section>
-        <article class="tweet-container">
-          <header>
-            <p> (picture) name</p>
-            <p> @user name</p>
-          </header>
-          <div>
-             <p>tweet goes here</p>
-          </div>
-          <footer>
-            <div>
-              <p> x day ago</p>
-            </div>
-            <div>
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-sharp fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-            
-          </footer>
-        </article>
-      </section>
+      <div id="tweet-container">       
     </main>
   </body>
 </html>

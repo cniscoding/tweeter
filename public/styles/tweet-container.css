@@ -10,6 +10,11 @@ article.tweet-container header {
   justify-content: space-between;
 }
 
+article.tweet-container span img {
+  width:2rem;
+  height:2rem;
+}
+
 article {
   border: 10px black solid;
   padding: 1rem;
@@ -31,3 +36,6 @@ i:hover{
   color:red;
 }
 
+span {
+  display: flex;
+}
