@@ -1,13 +1,13 @@
 $(document).ready(function() {
-console.log('document is ready to be counted')
-
   $('textarea').on('keyup', function () {
-
-    console.log('this.val()', $(this).val())
-    let textValue = $(this).val()
-    const characterRemaining = 140 - textValue.length
-    console.log('characterRemaining', characterRemaining) 
-    $('[name=counter]').val(characterRemaining)
+    const textValueLength = $(this).val().length
+    const characterRemaining = 140 - textValueLength
+    if ( characterRemaining > 0) {
+      $('[name=counter').css('color', '#545149')
+      $('[name=counter]').val(characterRemaining)
+    } else {
+      $('[name=counter').css('color', 'red')
+      $('[name=counter]').val(characterRemaining)
+    }
   })
-
 });
