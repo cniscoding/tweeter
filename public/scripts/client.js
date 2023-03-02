@@ -32,6 +32,12 @@ $(document).ready(function() {
   };
   
   createTweetElement = function(tweet) {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
     const $tweetTemp = `
       <article>
       <header class="avatarName">
@@ -44,7 +50,7 @@ $(document).ready(function() {
          ${tweet.user.handle}
       </header>
       <div>
-         <p>${tweet.content.text}</p>
+         <p>${escape(tweet.content.text)}</p>
       </div>
       <footer>
         <div>
@@ -63,6 +69,7 @@ $(document).ready(function() {
    
   // renderTweets(tweetData);
 
+  
   const $tweetForm = $('form')
   $tweetForm.on('submit', (event) => {
     event.preventDefault();
