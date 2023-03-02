@@ -8,31 +8,27 @@ $(document).ready(function() {
 
   const loadTweets = () => {
     $.ajax({
-        method: 'GET',
-        url: 'http://localhost:8080/tweets',
-        success: (response) => {
-          $('#tweet-container').empty();
-          renderTweets(response);
-        }
-      })
+      method: 'GET',
+      url: 'http://localhost:8080/tweets',
+      success: (response) => {
+        $('#tweet-container').empty();
+        renderTweets(response);
+      }
+    });
   };
 
   loadTweets();
   
   const renderTweets = function(tweets) {
-    // loops through tweets
     for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
       createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
       const $tweetComplete = createTweetElement(tweet);
-      
       $('#tweet-container').prepend($tweetComplete);
     }
   };
   
   createTweetElement = function(tweet) {
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -43,10 +39,8 @@ $(document).ready(function() {
       <header class="avatarName">
         <span>
           <img src="${tweet.user.avatars}"></img>
-    
           ${tweet.user.name}
         </span>
-        
          ${tweet.user.handle}
       </header>
       <div>
@@ -67,14 +61,11 @@ $(document).ready(function() {
     return $tweetTemp;
   };
    
-  // renderTweets(tweetData);
-
-  
-  const $tweetForm = $('form')
+  const $tweetForm = $('form');
   $tweetForm.on('submit', (event) => {
     event.preventDefault();
     const urlEncoded = $tweetForm.serialize();
-    console.log(urlEncoded)
+    // console.log(urlEncoded)
     $.ajax({
       method:'POST',
       url: 'http://localhost:8080/tweets',
@@ -83,6 +74,6 @@ $(document).ready(function() {
         console.log(response);
         loadTweets();
       }
-    })
-  }) 
+    });
+  });
 });
