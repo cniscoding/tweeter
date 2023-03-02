@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function() {
 
   const loadTweets = () => {
@@ -63,15 +57,30 @@ $(document).ready(function() {
    
   const $tweetForm = $('form');
   $tweetForm.on('submit', (event) => {
-    event.preventDefault();
     const urlEncoded = $tweetForm.serialize();
+    const textLength = $('textarea').val().length
+    console.log('textLength', textLength)
+    
+    if (textLength === 0) {
+      alert('Please enter a message');
+      console.log('Please enter a message');
+    } 
+    if ( textLength > 140){
+      alert('Message length is too long. Please keep within 140 characters')
+      console.log('Message length is too long. Please keep within 140 characters')
+    } 
+
+    event.preventDefault();
     // console.log(urlEncoded)
+
     $.ajax({
       method:'POST',
       url: 'http://localhost:8080/tweets',
       data :urlEncoded,
       success: (response) => {
         console.log(response);
+        $('textarea').val('')
+        $('[name=counter]').val('140')
         loadTweets();
       }
     });
