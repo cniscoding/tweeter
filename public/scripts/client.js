@@ -31,14 +31,16 @@ const tweetData = [
 
 $(document).ready(function() {
   console.log('client.JS - page is ready');
+  
+  // $('#tweet-container').empty() when doing ajax
   const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
-      console.log('tweet.user.avatars',tweet.user.avatars);
       // calls createTweetElement for each tweet
       createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       const $tweetComplete = createTweetElement(tweet);
+      
       $('#tweet-container').append($tweetComplete);
     }
   };
@@ -74,5 +76,24 @@ $(document).ready(function() {
   };
    
   renderTweets(tweetData);
+
+  const $tweetForm = $('form')
+  $tweetForm.on('submit', (event) => {
+    event.preventDefault();
+    const urlEncoded = $tweetForm.serialize();
+    console.log(urlEncoded)
+    $.ajax({
+      method:'POST',
+      url: '../../server/index.js',
+      data :urlEncoded,
+      sucess: (response) => {
+        console.log(response);
+      }
+    })
+    //get data from form
+    //urlEncoded the data
+    //make ajax post request
+
+  })
   
 });
