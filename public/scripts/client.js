@@ -59,17 +59,18 @@ $(document).ready(function() {
   $tweetForm.on('submit', (event) => {
     const urlEncoded = $tweetForm.serialize();
     const textLength = $('textarea').val().length
-    console.log('textLength', textLength)
-    
-    if (textLength === 0) {
-      alert('Please enter a message');
-      console.log('Please enter a message');
-    } 
-    if ( textLength > 140){
-      alert('Message length is too long. Please keep within 140 characters')
-      console.log('Message length is too long. Please keep within 140 characters')
-    } 
+    const hidden = $('#hiddenMsg')
 
+    if (textLength === 0 || textLength > 140) {
+      hidden.slideDown( "slow", function() {
+        document.getElementById('hiddenMsg').innerHTML = '❗️Your message should be at least 1 characters, with a maximum of 140 characters'
+        // $('#hiddenMsg').val('why does this not change');
+        hidden.css('display', 'block')
+        // .val('❗️Your message should be at least 1 character')
+      });
+
+    console.log('hidden', hidden.val())
+    } 
     event.preventDefault();
     // console.log(urlEncoded)
 

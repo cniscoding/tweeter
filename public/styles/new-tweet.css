@@ -39,4 +39,6 @@ section{
 
 .hiddenMsg {
   display : none;
+  color: red;
+  border : 1px red solid
 }

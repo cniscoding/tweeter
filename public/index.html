@@ -58,12 +58,14 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <p class="hiddenMsg">this is an error message</p>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="divTweetCounter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+          <div>
+            <p class="hiddenMsg" id="hiddenMsg"></p>
           </div>
         </form>
       </section>
