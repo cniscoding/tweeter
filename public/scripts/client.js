@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // create new tweets with ajax
+  // GET tweets with ajax
   const loadTweets = () => {
     $.ajax({
       method: 'GET',
@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   loadTweets();
   
+  //render tweets
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       createTweetElement(tweet);
@@ -21,6 +22,7 @@ $(document).ready(function() {
     }
   };
   
+  //creates the tweet element
   createTweetElement = function(tweet) {
     const escape = function(str) {
       let div = document.createElement("div");
@@ -69,6 +71,7 @@ $(document).ready(function() {
     }
     event.preventDefault();
 
+// POST tweets Ajax
     $.ajax({
       method:'POST',
       url: '/tweets',
