@@ -3,7 +3,7 @@ $(document).ready(function() {
   const loadTweets = () => {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:8080/tweets',
+      url: '/tweets',
       success: (response) => {
         $('#tweet-container').empty();
         renderTweets(response);
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
     $.ajax({
       method:'POST',
-      url: 'http://localhost:8080/tweets',
+      url: '/tweets',
       data :urlEncoded,
       success: (response) => {
         console.log(response);
