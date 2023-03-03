@@ -1,21 +1,20 @@
 $(document).ready(function() {
-  const selectNewTweet = $('.divWriteTweet')
+  const selectNewTweet = $('.divWriteTweet');
   const newTweetSection = $('.new-tweet');
 
 
-    selectNewTweet.on('click', ()=> {
-    if (newTweetSection.css('display') == 'none') { 
+  selectNewTweet.on('click', ()=> {
+    if (newTweetSection.css('display') == 'none') {
       newTweetSection.slideDown("slow", function() {
-      newTweetSection.css('display', 'block');
-      $('#tweet-text').focus()
-      })
-    }
-    else if (newTweetSection.css('display') == 'block') { 
+        newTweetSection.css('display', 'block');
+        $('#tweet-text').focus();
+      });
+    } else if (newTweetSection.css('display') == 'block') {
       newTweetSection.slideUp("slow", function() {
         newTweetSection.css('display', 'none');
-        })
+      });
     }
-  })
+  });
 
   
 
@@ -50,11 +49,11 @@ $(document).ready(function() {
     const $tweetTemp = `
       <article>
       <header class="avatarName">
-        <span>
+        <div>
           <img src="${tweet.user.avatars}"></img>
-          <p>${tweet.user.name}<p>
-        </span>
-         <p>${tweet.user.handle}<p>
+          ${tweet.user.name}       
+        </div> 
+         ${tweet.user.handle}
       </header>
       <div>
          <p>${escape(tweet.content.text)}</p>

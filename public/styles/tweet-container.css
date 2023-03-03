@@ -8,17 +8,9 @@ footer div p {
   margin: 0px;
 }
 
-.tweet-container {
-  /* box-sizing: border-box; */
-  
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
-}
-
-div.tweet-container span img {
-  width:2rem;
-  height:2rem;
+header div img  {
+  width:1.5rem;
+  height:1.5rem;
 }
 
 article {
@@ -40,14 +32,9 @@ section{
   display: none;
 }
 
-
 i:hover{
   color:red;
 }
-
-/* span {
-  display: flex;
-} */
 
 .avatarName {
   display: flex;
