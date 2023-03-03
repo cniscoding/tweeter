@@ -28,6 +28,11 @@ span {
   margin-top:-1.2rem;
   color:red;
   cursor: pointer;
+  animation: bounce .3s infinite alternate;
+}
+
+@keyframes bounce {
+  to { transform: scale(1.3); }
 }
 
 .divWriteTweet p {
