@@ -6,11 +6,9 @@ nav {
   color: #FFFFFF;
   display:flex;
   padding: 1.5em;
-
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
-  
   position: fixed;
 }
 
@@ -24,7 +22,6 @@ span {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
 }
 
 .divWriteTweet i {

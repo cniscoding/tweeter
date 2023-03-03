@@ -8,7 +8,7 @@ footer div p {
   margin: 0px;
 }
 
-header div img  {
+header.avatarName div img  {
   width:1.5rem;
   height:1.5rem;
 }
@@ -18,7 +18,6 @@ article {
   padding: 1rem;
   margin: 1rem;
   box-sizing: border-box;
-  width: 90%;
 }
 
 article:hover {
@@ -41,6 +40,5 @@ i:hover{
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
-
 }
 

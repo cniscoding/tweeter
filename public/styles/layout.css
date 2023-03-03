@@ -21,21 +21,24 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 main {
-  width :90vw;
   background-color: #f4f1ec;
 }
 
 p{
-  /* overflow-wrap: anywhere; */
+  overflow-wrap: anywhere;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
+header div h2 {
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 1rem;
+}
 
-
+#profilePic {
+  width: 10rem;
+  height: auto
+}
 

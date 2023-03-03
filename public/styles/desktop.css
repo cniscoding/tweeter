@@ -14,9 +14,5 @@ main {
 }
 
 header {
-  /* width: 33%; */
-}
-
-main{
-  width: 66%;
+  display: inline-block;
 }

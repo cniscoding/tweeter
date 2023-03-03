@@ -1,23 +1,5 @@
 $(document).ready(function() {
-  const selectNewTweet = $('.divWriteTweet');
-  const newTweetSection = $('.new-tweet');
-
-
-  selectNewTweet.on('click', ()=> {
-    if (newTweetSection.css('display') == 'none') {
-      newTweetSection.slideDown("slow", function() {
-        newTweetSection.css('display', 'block');
-        $('#tweet-text').focus();
-      });
-    } else if (newTweetSection.css('display') == 'block') {
-      newTweetSection.slideUp("slow", function() {
-        newTweetSection.css('display', 'none');
-      });
-    }
-  });
-
-  
-
+  // create new tweets with ajax
   const loadTweets = () => {
     $.ajax({
       method: 'GET',
@@ -82,15 +64,10 @@ $(document).ready(function() {
     if (textLength === 0 || textLength > 140) {
       hidden.slideDown("slow", function() {
         document.getElementById('hiddenMsg').innerHTML = '❗️Your message should be at least 1 characters, with a maximum of 140 characters';
-        // $('#hiddenMsg').val('why does this not change');
         hidden.css('display', 'block');
-        // .val('❗️Your message should be at least 1 character')
       });
-
-      console.log('hidden', hidden.val());
     }
     event.preventDefault();
-    // console.log(urlEncoded)
 
     $.ajax({
       method:'POST',
