@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('textarea').on('keyup', function() {
+  $('textarea').on('input', function() {
     const textValueLength = $(this).val().length;
     const characterRemaining = 140 - textValueLength;
     if (characterRemaining >= 0) {
