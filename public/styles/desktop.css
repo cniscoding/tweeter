@@ -12,3 +12,11 @@ body {
 main {
   padding-top: 120px;
 }
+
+header {
+  /* width: 33%; */
+}
+
+main{
+  width: 66%;
+}

@@ -4,10 +4,16 @@ footer {
   border-top: 10px solid black;
 }
 
-article.tweet-container header {
-  display: flex;
+footer div p {
+  margin: 0px;
+}
+
+.tweet-container {
+  /* box-sizing: border-box; */
+  
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 div.tweet-container span img {
@@ -19,6 +25,8 @@ article {
   border: 10px black solid;
   padding: 1rem;
   margin: 1rem;
+  box-sizing: border-box;
+  width: 90%;
 }
 
 article:hover {
@@ -26,20 +34,20 @@ article:hover {
 }
 
 section{
-  padding: 1rem
+  padding: 1rem;
+  margin: 2rem;
+  border: 1px black solid;
+  display: none;
 }
 
-footer div p {
-  margin: 0px;
-}
 
 i:hover{
   color:red;
 }
 
-span {
+/* span {
   display: flex;
-}
+} */
 
 .avatarName {
   display: flex;

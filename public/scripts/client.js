@@ -1,4 +1,23 @@
 $(document).ready(function() {
+  const selectNewTweet = $('.divWriteTweet')
+  const newTweetSection = $('.new-tweet');
+
+
+    selectNewTweet.on('click', ()=> {
+    if (newTweetSection.css('display') == 'none') { 
+      newTweetSection.slideDown("slow", function() {
+      newTweetSection.css('display', 'block');
+      $('#tweet-text').focus()
+      })
+    }
+    else if (newTweetSection.css('display') == 'block') { 
+      newTweetSection.slideUp("slow", function() {
+        newTweetSection.css('display', 'none');
+        })
+    }
+  })
+
+  
 
   const loadTweets = () => {
     $.ajax({
@@ -33,9 +52,9 @@ $(document).ready(function() {
       <header class="avatarName">
         <span>
           <img src="${tweet.user.avatars}"></img>
-          ${tweet.user.name}
+          <p>${tweet.user.name}<p>
         </span>
-         ${tweet.user.handle}
+         <p>${tweet.user.handle}<p>
       </header>
       <div>
          <p>${escape(tweet.content.text)}</p>
@@ -58,19 +77,19 @@ $(document).ready(function() {
   const $tweetForm = $('form');
   $tweetForm.on('submit', (event) => {
     const urlEncoded = $tweetForm.serialize();
-    const textLength = $('textarea').val().length
-    const hidden = $('#hiddenMsg')
+    const textLength = $('textarea').val().length;
+    const hidden = $('#hiddenMsg');
 
     if (textLength === 0 || textLength > 140) {
-      hidden.slideDown( "slow", function() {
-        document.getElementById('hiddenMsg').innerHTML = '❗️Your message should be at least 1 characters, with a maximum of 140 characters'
+      hidden.slideDown("slow", function() {
+        document.getElementById('hiddenMsg').innerHTML = '❗️Your message should be at least 1 characters, with a maximum of 140 characters';
         // $('#hiddenMsg').val('why does this not change');
-        hidden.css('display', 'block')
+        hidden.css('display', 'block');
         // .val('❗️Your message should be at least 1 character')
       });
 
-    console.log('hidden', hidden.val())
-    } 
+      console.log('hidden', hidden.val());
+    }
     event.preventDefault();
     // console.log(urlEncoded)
 
@@ -80,8 +99,8 @@ $(document).ready(function() {
       data :urlEncoded,
       success: (response) => {
         console.log(response);
-        $('textarea').val('')
-        $('[name=counter]').val('140')
+        $('textarea').val('');
+        $('[name=counter]').val('140');
         loadTweets();
       }
     });
