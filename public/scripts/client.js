@@ -62,26 +62,29 @@ $(document).ready(function() {
     const urlEncoded = $tweetForm.serialize();
     const textLength = $('textarea').val().length;
     const hidden = $('#hiddenMsg');
+    event.preventDefault();
 
+    // verifications 
     if (textLength === 0 || textLength > 140) {
       hidden.slideDown("slow", function() {
         document.getElementById('hiddenMsg').innerHTML = '❗️Your message should be at least 1 characters, with a maximum of 140 characters';
         hidden.css('display', 'block');
       });
-    }
-    event.preventDefault();
 
-// POST tweets Ajax
-    $.ajax({
-      method:'POST',
-      url: '/tweets',
-      data :urlEncoded,
-      success: (response) => {
-        console.log(response);
-        $('textarea').val('');
-        $('[name=counter]').val('140');
-        loadTweets();
+    // if everything pass, run ajax
+    } else {
+      // POST tweets Ajax
+          $.ajax({
+            method:'POST',
+            url: '/tweets',
+            data :urlEncoded,
+            success: (response) => {
+              console.log(response);
+              $('textarea').val('');
+              $('[name=counter]').val('140');
+              loadTweets();
+            }
+          });
       }
-    });
   });
 });
